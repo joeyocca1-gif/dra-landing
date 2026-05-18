@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    { "source": "/login",            "destination": "https://app.disasterrecoveryadvisors.com/login",        "permanent": true },
+    { "source": "/dashboard",        "destination": "https://app.disasterrecoveryadvisors.com/",             "permanent": true },
+    { "source": "/dashboard/:path*", "destination": "https://app.disasterrecoveryadvisors.com/:path*",       "permanent": true },
+    { "source": "/app",              "destination": "https://app.disasterrecoveryadvisors.com/",             "permanent": true },
+    { "source": "/app/:path*",       "destination": "https://app.disasterrecoveryadvisors.com/:path*",       "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options",     "value": "nosniff" },
+        { "key": "X-Frame-Options",            "value": "DENY" },
+        { "key": "Referrer-Policy",            "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security",  "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    }
+  ]
+}
